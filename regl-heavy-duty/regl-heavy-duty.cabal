@@ -1,0 +1,39 @@
+name:                 regl-heavy-duty
+version:              0.1.0.0
+author:               Nick Spinale
+maintainer:           Nick Spinale <nick@nickspinale.com>
+license:              BSD3
+license-file:         LICENSE
+build-type:           Simple
+cabal-version:        >=1.10
+
+library
+  default-language:   Haskell2010
+  ghc-options:        -Wall -fwarn-tabs -fno-warn-orphans -fno-warn-unused-matches
+  hs-source-dirs:     src
+
+  exposed-modules:    Data.Regex.HeavyDuty
+                    , Data.Regex.HeavyDuty.DFA
+                    , Data.Regex.HeavyDuty.Combinators
+
+  build-depends:      base >=4.8 && <5
+                    , bytestring
+                    , text
+                    , regexp
+                    , array
+                    , containers
+
+executable grep
+  default-language:   Haskell2010
+  ghc-options:        -O2 -Wall -rtsopts -fno-warn-unused-top-binds -fno-warn-unused-matches -fno-warn-type-defaults
+  hs-source-dirs:     demo/grep
+  main-is:            Main.hs
+
+  other-modules:      Parse
+
+  build-depends:      base >=4.8 && <5
+                    , regl-heavy-duty
+                    , attoparsec
+                    , bytestring
+                    , text
+                    , conduit

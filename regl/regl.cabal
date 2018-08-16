@@ -1,0 +1,86 @@
+name:                 regl
+version:              0.1.0.0
+author:               Nick Spinale
+maintainer:           Nick Spinale <nick@nickspinale.com>
+license:              BSD3
+license-file:         LICENSE
+build-type:           Simple
+cabal-version:        >=1.10
+
+library
+  default-language:   Haskell2010
+  ghc-options:        -Wall -fwarn-tabs -fno-warn-orphans -fno-warn-unused-matches
+  hs-source-dirs:     src
+
+  exposed-modules:    Data.Regex.Poly
+                    , Data.Regex.Poly.Core
+                    , Data.Regex.Poly.Combinators
+                    , Data.Regex.Poly.Combinators.Char
+                    , Data.Regex.Poly.Combinators.General
+                    , Data.Regex.Poly.Matcher
+                    , Data.Regex.Poly.ToMono
+
+                    , Data.Regex.Mono
+                    , Data.Regex.Mono.Core
+                    , Data.Regex.Mono.Combinators
+                    , Data.Regex.Mono.Combinators.Char
+                    , Data.Regex.Mono.Pretty
+                    , Data.Regex.Mono.ToPoly
+
+                    , Data.Regex.DFA
+                    , Data.Regex.DFA.Core
+                    , Data.Regex.DFA.Match
+                    , Data.Regex.DFA.Streaming
+                    , Data.Regex.DFA.Streaming.Buffer
+
+                    , Data.Regex.NFA
+                    , Data.Regex.NFA.Core
+
+                    , Data.ByteSet
+
+                    , Data.Semiring
+                    , Data.Semiring.Extra
+                    , Data.BooleanAlgebra
+                    , Data.KleeneAlgebra
+
+  build-depends:      base >=4.8 && <5
+                    , array
+                    , bytestring
+                    , containers
+                    , deepseq
+                    , primitive
+                    , profunctors
+                    , text
+                    , transformers
+                    , vector
+                    , vector-algorithms
+
+test-suite tests
+  type:               exitcode-stdio-1.0
+  default-language:   Haskell2010
+  ghc-options:        -Wall -fwarn-tabs -fno-warn-missing-signatures -fno-warn-unused-matches -fno-warn-orphans
+  hs-source-dirs:     tests
+  main-is:            Tests.hs
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , QuickCheck
+                    , bytestring
+                    , tasty
+                    , tasty-quickcheck
+
+benchmark benchmarks
+  type:               exitcode-stdio-1.0
+  default-language:   Haskell2010
+  ghc-options:        -O2 -Wall -rtsopts
+  hs-source-dirs:     benchmarks
+  main-is:            Benchmarks.hs
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , array
+                    , bytestring
+                    , criterion
+                    , regex-applicative
+                    , text
+                    , transformers

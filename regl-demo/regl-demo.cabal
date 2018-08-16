@@ -1,0 +1,50 @@
+name:                 regl-demo
+version:              0.1.0.0
+author:               Nick Spinale
+maintainer:           Nick Spinale <nick@nickspinale.com>
+license:              BSD3
+license-file:         LICENSE
+build-type:           Simple
+cabal-version:        >=1.10
+
+executable grep
+  default-language:   Haskell2010
+  ghc-options:        -O2 -Wall -rtsopts -fno-warn-unused-top-binds -fno-warn-unused-matches -fno-warn-type-defaults
+  hs-source-dirs:     exe/grep
+  main-is:            Main.hs
+
+  other-modules:      Parse
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , attoparsec
+                    , bytestring
+                    , text
+                    , conduit
+
+executable search
+  default-language:   Haskell2010
+  ghc-options:        -O2 -Wall -rtsopts -fno-warn-unused-top-binds -fno-warn-unused-matches -fno-warn-type-defaults
+  hs-source-dirs:     exe/search
+  main-is:            Main.hs
+
+  other-modules:      Regex
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , attoparsec
+                    , text
+
+executable match
+  default-language:   Haskell2010
+  ghc-options:        -O2 -Wall -rtsopts -fno-warn-unused-top-binds -fno-warn-unused-matches -fno-warn-type-defaults
+  hs-source-dirs:     exe/match
+  main-is:            Main.hs
+
+  other-modules:      Regex
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , attoparsec
+                    , text
+                    , transformers

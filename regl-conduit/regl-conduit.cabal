@@ -1,0 +1,43 @@
+name:                 regl-conduit
+version:              0.1.0.0
+author:               Nick Spinale
+maintainer:           Nick Spinale <nick@nickspinale.com>
+license:              BSD3
+license-file:         LICENSE
+build-type:           Simple
+cabal-version:        >=1.10
+
+library
+  default-language:   Haskell2010
+  ghc-options:        -Wall -fwarn-tabs -fno-warn-orphans -fno-warn-unused-matches
+  hs-source-dirs:     src
+
+  exposed-modules:    Data.Conduit.Regex
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , conduit
+                    , array
+                    , bytestring
+                    , containers
+                    , deepseq
+                    , primitive
+                    , profunctors
+                    , text
+                    , transformers
+                    , vector
+                    , vector-algorithms
+                    , mono-traversable
+
+executable demo
+  default-language:   Haskell2010
+  ghc-options:        -O2 -Wall -rtsopts -fno-warn-unused-top-binds -fno-warn-unused-matches -fno-warn-type-defaults
+  hs-source-dirs:     demo
+  main-is:            Main.hs
+
+  build-depends:      base >=4.8 && <5
+                    , regl
+                    , regl-conduit
+                    , bytestring
+                    , conduit
+                    , text

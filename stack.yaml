@@ -1,0 +1,10 @@
+resolver: lts-12.19
+packages:
+- regl
+- regl-conduit
+- regl-heavy-duty
+- regl-demo
+
+extra-deps:
+- github: cacay/regexp
+  commit: 25fd123edb00ce0dbd8b6fd6732a7aeca37e4a47
