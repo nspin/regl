@@ -8,3 +8,4 @@ packages:
 extra-deps:
 - github: cacay/regexp
   commit: 25fd123edb00ce0dbd8b6fd6732a7aeca37e4a47
+- semiring-num-1.6.0.4

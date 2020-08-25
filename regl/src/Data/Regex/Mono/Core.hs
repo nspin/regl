@@ -23,7 +23,7 @@ module Data.Regex.Mono.Core
 
 import Data.ByteSet
 
-import Data.Semiring
+import Data.Semiring hiding (star)
 import Data.BooleanAlgebra
 import Data.KleeneAlgebra
 

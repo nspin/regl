@@ -17,7 +17,9 @@ See `./regl-demo` for some examples.
 
 ### Credit
 
-Some ideas for functionality are taken from [regex-applicative](https://github.com/feuerbach/regex-applicative).
+Some ideas and modules are borrowed from [cacay/regexp](https://github.com/cacay/regexp).
+
+Further ideas are borrowed from [regex-applicative](https://github.com/feuerbach/regex-applicative).
 
 Some combinators are taken from [attoparsec](https://github.com/bos/attoparsec) and [parsers](https://github.com/ekmett/parsers/).
 

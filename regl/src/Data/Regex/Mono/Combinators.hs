@@ -20,7 +20,7 @@ module Data.Regex.Mono.Combinators
 
 import Data.Regex.Mono.Core
 
-import Data.Semiring
+import Data.Semiring hiding (star, plus)
 import Data.Semiring.Extra
 import Data.KleeneAlgebra
 import Data.BooleanAlgebra

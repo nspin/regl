@@ -38,7 +38,7 @@ library
 
                     , Data.ByteSet
 
-                    , Data.Semiring
+                    -- , Data.Semiring
                     , Data.Semiring.Extra
                     , Data.BooleanAlgebra
                     , Data.KleeneAlgebra
@@ -54,6 +54,7 @@ library
                     , transformers
                     , vector
                     , vector-algorithms
+                    , semiring-num
 
 test-suite tests
   type:               exitcode-stdio-1.0

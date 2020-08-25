@@ -6,7 +6,7 @@ import qualified Data.ByteSet as ByteSet
 import Data.Regex.Poly.Core hiding (star)
 import qualified Data.Regex.Mono as Mono
 import Data.Word
-import Data.Semiring
+import Data.Semiring hiding (star, plus)
 import Data.KleeneAlgebra
 
 polyToMono :: RE Word8 a -> Mono.RE
